@@ -6,6 +6,7 @@ pipeline {
 			steps {
 				echo '---Build started----!'
 				git 'https://github.com/jeydevops/java-maven-junit-helloworld.git'
+				sh 'cat /tmp/file'
 				sh 'mvn clean package -DskipTests=true'
 				//logstashSend failBuild: true, maxLines: 1000
 			}
