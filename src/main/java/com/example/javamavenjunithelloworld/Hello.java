@@ -22,7 +22,7 @@ public class Hello {
             throw new IllegalArgumentException("Parameter «times» should be a positive integer no larger than "
                     + MAXIMUM_AMOUNT_OF_TIMES + ".");
         }
-        this.times = times;
+        this.times = (short) times;
     }
 
     /**
