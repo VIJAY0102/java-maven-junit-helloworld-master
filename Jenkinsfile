@@ -17,13 +17,14 @@ pipeline {
        sh 'mvn test'
 			}
 		}
-		
+	}
+	
+	post {
 		stage("Send ConsoleLog to Logstash") {
 			steps {
 				echo '---Archive jenkins Console Logs to Elasticsearch----!'				
 				logstashSend failBuild: true, maxLines: 1000
 			}
 		}
-	
 	}
 }
